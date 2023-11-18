@@ -18,6 +18,8 @@ class ProjectResource extends Resource
     protected static ?string $model = Project::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $modelLabel = 'Proyecto';
+
 
     public static function form(Form $form): Form
     {
@@ -41,14 +43,18 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('initial_date')
+                    ->label('Fecha de inicio')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('final_date')
+                    ->label('Fecha de finalización')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer')
+                    ->label('Cliente')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

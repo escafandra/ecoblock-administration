@@ -18,26 +18,34 @@ class ProductResource extends Resource
     protected static ?string $model = Product::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $modelLabel = 'Producto';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Toggle::make('enabled')
+                    ->label('Activo')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->label('Nombre')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
                     ->maxLength(65535)
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('measure')
+                    ->label('Medida')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('price')
+                    ->label('Precio')
                     ->numeric()
                     ->prefix('$'),
-                Forms\Components\TextInput::make('advantages'),
-                Forms\Components\TextInput::make('datasheet'),
+                Forms\Components\TextInput::make('advantages')
+                    ->label('Ventajas'),
+                Forms\Components\TextInput::make('datasheet')
+                    ->label('Características'),
             ]);
     }
 
