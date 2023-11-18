@@ -26,14 +26,19 @@ class ProjectResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Nombre')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
                     ->maxLength(65535)
                     ->columnSpanFull(),
-                Forms\Components\DatePicker::make('initial_date'),
-                Forms\Components\DatePicker::make('final_date'),
+                Forms\Components\DatePicker::make('initial_date')
+                    ->label('Fecha de inicio'),
+                Forms\Components\DatePicker::make('final_date')
+                    ->label('Fecha de inicio'),
                 Forms\Components\TextInput::make('customer')
+                    ->label('Cliente')
                     ->maxLength(255),
             ]);
     }

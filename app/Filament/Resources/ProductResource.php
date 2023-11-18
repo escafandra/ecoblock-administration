@@ -54,12 +54,16 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\IconColumn::make('enabled')
+                    ->label('Activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('measure')
+                    ->label('Medida')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
+                    ->label('Precio')
                     ->money()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
