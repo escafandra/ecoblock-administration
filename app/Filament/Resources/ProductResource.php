@@ -46,6 +46,11 @@ class ProductResource extends Resource
                     ->label('Ventajas'),
                 Forms\Components\TextInput::make('datasheet')
                     ->label('Características'),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('images')
+                    ->label('Imágenes')
+                    ->collection('images')
+                    ->multiple()
+                    ->reorderable()
             ]);
     }
 

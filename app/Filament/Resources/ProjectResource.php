@@ -40,6 +40,11 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('customer')
                     ->label('Cliente')
                     ->maxLength(255),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('images')
+                    ->label('Imágenes')
+                    ->collection('images')
+                    ->multiple()
+                    ->reorderable()
             ]);
     }
 
