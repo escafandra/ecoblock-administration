@@ -17,6 +17,11 @@ class Product extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
+    protected $casts = [
+        'advantages' => 'json',
+        'datasheet' => 'json',
+    ];
+
     protected $fillable = [
         'name',
         'description',
