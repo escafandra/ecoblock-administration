@@ -42,15 +42,21 @@ class ProductResource extends Resource
                     ->label('Precio')
                     ->numeric()
                     ->prefix('$'),
-                Forms\Components\TextInput::make('advantages')
-                    ->label('Ventajas'),
-                Forms\Components\TextInput::make('datasheet')
-                    ->label('Características'),
+                Forms\Components\KeyValue::make('advantages')
+                    ->label('Ventajas')
+                    ->keyLabel('Orden')
+                    ->addActionLabel('Añadir ventaja'),
+                Forms\Components\KeyValue::make('datasheet')
+                    ->label('Características')
+                    ->keyLabel('Nombre')
+                    ->addActionLabel('Añadir característica')
+                    ->reorderable(),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('images')
                     ->label('Imágenes')
                     ->collection('images')
                     ->multiple()
                     ->reorderable()
+                    ->columnSpanFull()
             ]);
     }
 

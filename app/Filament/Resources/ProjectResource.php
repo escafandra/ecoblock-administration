@@ -36,7 +36,7 @@ class ProjectResource extends Resource
                 Forms\Components\DatePicker::make('initial_date')
                     ->label('Fecha de inicio'),
                 Forms\Components\DatePicker::make('final_date')
-                    ->label('Fecha de inicio'),
+                    ->label('Fecha de finalización'),
                 Forms\Components\TextInput::make('customer')
                     ->label('Cliente')
                     ->maxLength(255),
@@ -45,6 +45,7 @@ class ProjectResource extends Resource
                     ->collection('images')
                     ->multiple()
                     ->reorderable()
+                    ->columnSpanFull()
             ]);
     }
 
