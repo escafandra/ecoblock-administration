@@ -53,7 +53,7 @@ class Project extends Model implements HasMedia
             ->nonQueued();
 
         $this->addMediaConversion('show')
-            ->fit(Manipulations::FIT_CROP, 1000, 600)
+            ->fit(Manipulations::FIT_CONTAIN, 1000, 600)
             ->nonQueued();
     }
 }
